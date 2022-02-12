@@ -1,0 +1,28 @@
+type User {
+    _id: ID
+    first_name: String
+    last_name: String
+    email: String
+    gender: String
+    ip_address: String
+}
+
+type Query {
+    "Devuelve todos los usuarios"
+    getUsers: [User]
+    "Devuelve un usuario"
+    getUser(id: ID!): User
+}
+
+input UserInput {
+    first_name: String!
+    last_name: String!
+    email: String
+    gender: String
+    ip_address: String
+}
+
+type Mutation {
+    "Crea un usuario"
+    createUser(input: UserInput!): User
+}
