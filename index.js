@@ -24,7 +24,7 @@ const typeDefs = [user, course];
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 
-app.use('/api', graphqlHTTP({
+app.use('/graphql', graphqlHTTP({
   schema: schema,
   rootValue: resolvers,
   graphiql: true
