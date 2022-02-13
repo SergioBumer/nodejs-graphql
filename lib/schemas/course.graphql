@@ -1,3 +1,4 @@
+
 type Query {
     "Devuelve todos los cursos"
     getCourses: [Course]
@@ -10,6 +11,7 @@ type Course {
     title: String
     description: String
     topic: String
+    people: [User]
 }
 
 input CourseInput {
@@ -31,4 +33,6 @@ type Mutation {
     editCourse(id: ID!, input: CourseEditInput!): Course
     "Borra un curso"
     deleteCourse(id: ID!): Course
+    "Añadir personas a un curso"
+    addPeople(courseID: ID!, personID: ID!): Course
 }
