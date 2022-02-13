@@ -1,3 +1,9 @@
+"Valida los tipos de nivel"
+enum Level {
+    Rookie
+    Intermediate
+    Advanced
+}
 
 type Query {
     "Devuelve todos los cursos"
@@ -12,12 +18,14 @@ type Course {
     description: String
     topic: String
     people: [User]
+    level: Level
 }
 
 input CourseInput {
     title: String!
     description: String!
     topic: String
+    level: Level
 }
 
 input CourseEditInput {

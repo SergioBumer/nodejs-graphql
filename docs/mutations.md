@@ -50,3 +50,36 @@ mutation addPersonToSystems1($course: ID!, $person: ID!) {
   }
 }
 ```
+
+## Enums
+
+### Query
+```graphql
+mutation CreateNewCourse($createInput: CourseInput!){
+  createCourse(input: $createInput) {
+    _id
+  }
+}
+```
+### Query Variables
+```json
+{
+  "createInput": {
+    "title": "Sistemas IV",
+    "description": "Diseño de software",
+    "level": "Advanced"
+  }
+}
+```
+
+## Resultado
+
+```json
+{
+  "data": {
+    "createCourse": {
+      "_id": "6209071c4278075ef2364c40"
+    }
+  }
+}
+```
